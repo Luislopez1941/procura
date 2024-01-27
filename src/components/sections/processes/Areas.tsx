@@ -126,7 +126,7 @@ const Areas: React.FC = () => {
         {areas ? (
         <div className='table__body'>
           {areas.map((area: BranchOffices) => {
-            const sucursal = branchOffices.find((sucursal: {id: number}) => sucursal.id === area.sucursal_id)
+            const sucursal = branchOffices.find((sucursal: {id: number}) => sucursal.id === area.id)
             console.log('Sucursal',sucursal)
             return (
               <div className='tbody__container' key={area.id}>

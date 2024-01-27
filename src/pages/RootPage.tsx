@@ -65,7 +65,7 @@ const RootPage: React.FC = () => {
             </AnchorTag>
           </div>
           <div className={`nav__item ${activeMenuIndex === 1 ? 'activeMenu' : ''}`}>
-                <AnchorTag className='nav__link ' onClick={() => toggleSubMenu(1)} to="/sales/ordenes" to="/sales/*">
+                <AnchorTag className='nav__link ' onClick={() => toggleSubMenu(1)} to="/sales/*">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" width="26" viewBox="0 0 448 512"><path d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
                     <span>Ventas</span>
                     <svg className='arrow' onClick={toggleClass} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
@@ -128,7 +128,7 @@ const RootPage: React.FC = () => {
                 </div>
             </div>
             <div className={`nav__item ${activeMenuIndex === 4 ? 'activeMenu' : ''}`} >
-                <AnchorTag className='nav__link' onClick={() => toggleSubMenu(4)} >
+                <AnchorTag className='nav__link' onClick={() => toggleSubMenu(4)}  to='/processes/*'>
                     <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm320 96c0-26.9-16.5-49.9-40-59.3V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V292.7c-23.5 9.5-40 32.5-40 59.3c0 35.3 28.7 64 64 64s64-28.7 64-64zM144 176a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm-16 80a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM400 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
                     <span>Procesos</span>
                     <svg className="arrow" onClick={toggleClass} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
