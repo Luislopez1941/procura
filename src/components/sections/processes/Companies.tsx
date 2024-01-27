@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useStore } from '../../../zustand/Store';
 import './styles/Companies.css';
 
-interface Company {
-  id: number;
-  nombre_comercial: string;
-  razon_social: string;
-}
+// interface Company {
+//   id: number;
+//   nombre_comercial: string;
+//   razon_social: string;
+// }
 
 
 const Company: React.FC = () => {
@@ -18,7 +18,6 @@ const Company: React.FC = () => {
   const { createCompanies }: any = useStore();
   const { companies, getCompanies}: any  = useStore(); 
 
-
     useEffect(() => {
       getCompanies(); 
     }, []); 
@@ -27,6 +26,7 @@ const Company: React.FC = () => {
       e.preventDefault();
       try {
         await createCompanies(razon_social, nombre_comercial);
+        await getCompanies()
     
       } catch (error) {
         console.error('Error al crear la empresa:', error);
@@ -127,7 +127,7 @@ const Company: React.FC = () => {
         </div>
         {companies ? (
           <div className='table__body'>
-            {companies.map((empresa) => (
+            {companies.map((empresa: any) => (
               <div className='tbody__container' key={empresa.id}>
                 <div className='tbody'>
                   <div className='td'>

@@ -20,6 +20,12 @@ interface Areas {
   nombre: string;
 }
 
+interface Series {
+  id: number;
+  nombre: string;
+}
+
+
 interface StoreState {
   companies: Companies[];
   branchOffices: BranchOffices[];
@@ -27,7 +33,7 @@ interface StoreState {
   series: Series[]; // Añade esta línea si `series` debería estar en `StoreState`
 }
 
-export const useStore = create<StoreState>((set, get) => ({
+export const useStore = create<StoreState>((set) => ({
   companies: [],
   branchOffices: [],
   areas: [],
@@ -47,7 +53,6 @@ export const useStore = create<StoreState>((set, get) => ({
       const response = await userService.createCompanies(razon_social, nombre_comercial, customPath);
       Swal.fire('Empresa creada exitosamente', '', 'success');
       console.log('Empresa creada:', response);
-      await get().getCompanies();
     } catch (error) {
       console.error('Error creating company:', error);
       Swal.fire('Error', 'Hubo un error al crear la empresa', 'error');
@@ -68,7 +73,7 @@ export const useStore = create<StoreState>((set, get) => ({
       const response = await userService.createBrachOffices(nombre, direccion, contacto, empresa_id);
       Swal.fire('Sucursal creada exitosamente', '', 'success');
       console.log('Sucursal creada', response)
-      await get().getBranchOffices();
+     
     } catch (error) {
       Swal.fire('Error', 'Hubo un error al crear la sucursal', 'error');
       console.error('Error creating sucursal:', error);
@@ -89,7 +94,7 @@ export const useStore = create<StoreState>((set, get) => ({
       const response = await userService.createAreas(sucursal_id, nombre);
       Swal.fire('Area creada exitosamente', '', 'success');
       console.log('Area creada', response)
-      await get().getAreas();
+
     } catch (error) {
       Swal.fire('Error', 'Hubo un error al crear la area', 'error');
       console.error('Error creating Areas', error);
@@ -110,7 +115,6 @@ export const useStore = create<StoreState>((set, get) => ({
       const response = await userService.createSeries(sucursal_id, nombre);
       Swal.fire('Serie creada exitosamente', '', 'success');
       console.log('Serie creada', response)
-      await get().getSeries();
     } catch (error) {
       Swal.fire('Error', 'Hubo un error al crear la serie', 'error');
       console.error('Error en crear la serie', error);

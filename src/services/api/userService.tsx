@@ -37,7 +37,7 @@ const userService = {
     return apiService.post(path, {sucursal_id, nombre})
   },
 
-  getSeries: async (customPath: string) => {
+  getSeries: async (customPath?: string) => {
     const path = customPath ||  'series_get';
     return apiService.get(path)
   },

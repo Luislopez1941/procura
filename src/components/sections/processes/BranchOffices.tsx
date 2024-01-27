@@ -30,6 +30,7 @@ const BranchOffices: React.FC = () => {
     e.preventDefault();
     try {
       await createBranchOffices(nombre, direccion, contacto, empresa_id);
+      await getBranchOffices()
     } catch (error) {
       console.error('Error al crear la sucursal:', error);
     }

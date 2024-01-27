@@ -32,6 +32,7 @@ const Areas: React.FC = () => {
     e.preventDefault()
     try {
       await createAreas(sucursal_id, nombre)
+      await getAreas()
     } catch (error) {
       console.error(error);
      

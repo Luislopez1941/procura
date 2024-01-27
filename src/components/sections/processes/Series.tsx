@@ -43,6 +43,7 @@ const Series: React.FC = () => {
     e.preventDefault();
     try {
       await createSeries(sucursal_id, nombre);
+      await getSeries()
     } catch (error) {
       console.error('Error al crear la sucursal:', error);
     }
